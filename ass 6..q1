@@ -1,0 +1,45 @@
+public class Student {
+    private String studentID;
+    private String studentName;
+    private double GPA;
+
+    public Student() {
+        studentID = "000";
+        studentName = "Unknown";
+        GPA = 0.0;
+    }
+
+    public Student(String studentID, String studentName, double GPA) {
+        this.studentID = studentID;
+        this.studentName = studentName;
+        this.GPA = GPA;
+    }
+
+    public void setStudentID(String studentID) { this.studentID = studentID; }
+    public void setStudentName(String studentName) { this.studentName = studentName; }
+    public void setGPA(double GPA) { this.GPA = GPA; }
+
+    public String getStudentID() { return studentID; }
+    public String getStudentName() { return studentName; }
+    public double getGPA() { return GPA; }
+
+    public boolean isHonorStudent() {
+        return GPA >= 3.5;
+    }
+public class TestStudent {
+    public static void main(String[] args) {
+        Student s1 = new Student("101", "Ahmed", 3.2);
+        Student s2 = new Student();
+
+        s2.setGPA(3.8);
+
+        System.out.println("Student 1: " + s1.getStudentID() + ", "
+                + s1.getStudentName() + ", GPA = " + s1.getGPA());
+        System.out.println("Student 2: " + s2.getStudentID() + ", "
+                + s2.getStudentName() + ", GPA = " + s2.getGPA());
+
+        System.out.println("Student 1 honor student? " + s1.isHonorStudent());
+        System.out.println("Student 2 honor student? " + s2.isHonorStudent());
+    }
+}
+}
